@@ -51,6 +51,19 @@ class VehicleDetail(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    def patch(self, request, pk):
+        # Retrieve the object to be updated
+        obj = self.get_object(pk)
+        if not obj:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        # Apply the partial update
+        serializer = VehicleSerializer(obj, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     def delete(self, request, pk):
         vehicle = self.get_object(pk)
         vehicle.delete()

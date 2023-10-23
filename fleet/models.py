@@ -35,6 +35,7 @@ class Vehicle(models.Model):
     fuel_type = models.CharField(max_length=50, default="Diesel")
     fuel_consumption = models.FloatField()
     vehicle_picture = models.ImageField(null=True, upload_to=rename_image)
+    is_available = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
