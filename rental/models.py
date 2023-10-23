@@ -22,10 +22,10 @@ class Rental(models.Model):
         (past_due, "Past Due")
     ]
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default=confirmed)
-    car = models.ForeignKey(Vehicle, on_delete=models.CASCADE, related_name="vehicle")
+    vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE, related_name="vehicle")
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name="customer")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.car} - {self.customer} -- {self.status}"
+        return f"{self.vehicle} - {self.customer} -- {self.status}"

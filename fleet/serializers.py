@@ -24,6 +24,7 @@ class VehicleSerializer(ModelSerializer):
             'fuel_consumption',
             'vehicle_picture',
             'maintenance',
+            'is_available',
             'created_on',
             'updated_on'
         ]
