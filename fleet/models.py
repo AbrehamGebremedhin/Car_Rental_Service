@@ -25,12 +25,12 @@ class Vehicle(models.Model):
         (MINIVAN, "MiniVan"),
         (PICKUP, "PickUp Truck"),
     ]
-    VIN = models.CharField(max_length=50)
+    VIN = models.CharField(max_length=50, unique=True)
     Brand = models.CharField(max_length=50)
     Model = models.CharField(max_length=50)
     Year = models.DateField()
     Type = models.CharField(max_length=20, choices=VEHICLE_CHOICES, default=SEDAN)
-    License_plate = models.CharField(max_length=7)
+    License_plate = models.CharField(max_length=7, unique=True)
     milage = models.FloatField()
     fuel_type = models.CharField(max_length=50, default="Diesel")
     fuel_consumption = models.FloatField()
