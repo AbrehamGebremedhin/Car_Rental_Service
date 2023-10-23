@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 
 
 # Create your views here.
-class CreateCustomer:
+class CreateCustomer(APIView):
     def post(self, request):
         serializer = CustomerSerializer(data=request.data)
         if serializer.is_valid():
@@ -17,7 +17,7 @@ class CreateCustomer:
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class CustomerDetail:
+class CreateCustomer(APIView):
     def get_object(self, pk):
         try:
             return Customer.objects.get(pk=pk)
