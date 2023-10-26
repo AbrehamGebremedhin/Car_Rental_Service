@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'fleet.apps.FleetConfig',
     'accounts.apps.AccountsConfig',
     'rental.apps.RentalConfig',
+    'celery'
 ]
 
 MIDDLEWARE = [

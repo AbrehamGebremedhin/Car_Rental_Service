@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
+# noinspection PyMethodParameters
 class Customer(models.Model):
     def rename_image(instance, filename):
         return f"static/driver_license/{instance.user}.jpg"

@@ -29,3 +29,13 @@ class Rental(models.Model):
 
     def __str__(self):
         return f"{self.vehicle} - {self.customer} -- {self.status}"
+
+
+class Reservation(models.Model):
+    pickup_date = models.DateField()
+    reserve_days = models.IntegerField(default=1)
+    client = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    car = models.ForeignKey(Vehicle, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.car} - {self.client} - {self.pickup_date}"

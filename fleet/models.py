@@ -2,6 +2,7 @@ from django.db import models
 
 
 # Create your models here.
+# noinspection PyMethodParameters
 class Vehicle(models.Model):
     def rename_image(instance, filename):
         return f"static/car_images/{instance.License_plate}.jpg"
