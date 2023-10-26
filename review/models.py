@@ -11,4 +11,4 @@ class Review(models.Model):
     vehicle = models.ForeignKey(Vehicle, on_delete=models.SET_NULL, null=True, related_name='car')
 
     def __str__(self):
-        return f"{self.rating}"
+        return f"{self.customer} rated {self.vehicle} - {self.rating}"
